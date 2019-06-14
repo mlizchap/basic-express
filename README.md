@@ -3,6 +3,9 @@
 - [Creating a Server](#create-a-server)
 - [Routing](#routing)
 - [Static Files](#static-files)
+- [Babel](#babel)
+- [Cors](#cors)
+- [Environment Variables](#environment-variables)
 
 ## Installation
 - create a package.json file
@@ -86,5 +89,31 @@ app.use(express.static(root, [options]));
     ```
 - you can now access static files: `http://localhost:3000/images/img_name.extensionname`
 
+## Cors
+- to install: `npm install cors`
+- to import: `const cors = require('cors');`
+- to use: `app.use('cors')`
+
+## Environemnt Variables
+- create a `.env` file and create variables
+- to make variables available in your source code: use donenv: `$ npm install dotenv`
+- import dotenv: `import 'dotenv/config';`
+- to use: `process.env.[variable name]`
+
+# Babel
+- for using newer versions of java
+- to install: `npm install @babel/core @babel/node --save-dev`
+- add to start script in `package.json`: 
+    ```javascript
+    `"start": "nodemon --exec babel-node src/index.js"`
+    ```
+- create a `.babelrc` file for the config:
+    ```javascript
+    {
+    "presets": [
+        "@babel/preset-env"
+    ]
+    }
+    ```
 
 
